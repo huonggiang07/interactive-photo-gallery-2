@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Thư viện ảnh tương tác</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .gallery-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Khung hiển thị hình lớn */
+        #image {
+            width: 650px;
+            height: 380px;
+            border: 4px solid #2c3e50;
+            border-radius: 8px;
+            margin: 0 auto 20px auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            line-height: 380px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            background-color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* 6 ảnh thu nhỏ */
+        .preview {
+            width: 110px;
+            height: 75px;
+            margin: 6px;
+            cursor: pointer;
+            border: 3px solid #fff;
+            border-radius: 6px;
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        /* Hiệu ứng khi di chuột hoặc bấm phím Tab */
+        .preview:hover, .preview:focus {
+            border-color: #3498db;
+            transform: scale(1.08);
+            outline: 3px solid #ff9800;
+        }
+    </style>
+</head>
+<body onload="setTabindex()">
+
+    <div class="gallery-container">
+        <!-- Khung hiển thị lớn -->
+        <div id="image" style="color: #333; text-shadow: none;">
+            Di chuột hoặc bấm Tab qua một hình ảnh bên dưới để hiển thị ở đây.
+        </div>
+
+        <!-- 1 & 2: Chó & Bầu trời -->
+        <img class="preview" 
+             src="https://picsum.photos/id/237/600/400" 
+             alt="Chú cún đen đáng yêu" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <img class="preview" 
+             src="https://picsum.photos/id/1056/600/400" 
+             alt="Bầu trời mây trong xanh" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <!-- 3 & 4: Thiên nhiên -->
+        <img class="preview" 
+             src="https://picsum.photos/id/28/600/400" 
+             alt="Cảnh núi rừng thiên nhiên xanh mát" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <img class="preview" 
+             src="https://picsum.photos/id/10/600/400" 
+             alt="Bờ biển hoàng hôn thơ mộng" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <!-- 5 & 6: Ẩm thực -->
+        <img class="preview" 
+             src="https://picsum.photos/id/1080/600/400" 
+             alt="Món dâu tây ẩm thực tươi ngon" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <img class="preview" 
+             src="https://picsum.photos/id/1060/600/400" 
+             alt="Tách cà phê ẩm thực thơm ngon" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
